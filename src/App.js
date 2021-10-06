@@ -6,14 +6,11 @@ import {BASE_URL, API_KEY, KEY_CONNECT} from './constants'
 function App() {
   const [apiData, setApiData] = useState([])
   const [spaceImage, setSpaceImage] = useState(null);
-  // console.log(arr)
 
 useEffect(() => {
 
   axios.get(`${BASE_URL}${KEY_CONNECT}${API_KEY}`)
   .then(res => {
-    // const hello = Object.entries(res.data)
-    //   console.log(hello)
       return setApiData(res.data)
 
   })
@@ -27,9 +24,7 @@ console.log(apiData);
   return (
     <div className="App">
       <h1> Nasa Photo of the Day</h1>
-      <p>
-        </p>
-      <img src={`${apiData.url}`} alt='spacephoto'/>
+      <img src={apiData.url} alt='spacephoto'/>
       <h3> {apiData.title} </h3>
       <p> {apiData.explanation}</p>
       <p> {apiData.date}</p>
