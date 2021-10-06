@@ -24,8 +24,8 @@ console.log(apiData);
   return (
     <div className="App">
       <h1> Nasa Photo of the Day</h1>
-      <img src={apiData.url} alt='spacephoto'/>
       <h3> {apiData.title} </h3>
+      <img src={apiData.url} alt='spacephoto'/>
       <p> {apiData.explanation}</p>
       <p> {apiData.date}</p>
       <p> {apiData.copyright} </p>
