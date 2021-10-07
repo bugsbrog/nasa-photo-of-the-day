@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from 'axios';
 import {BASE_URL, API_KEY, KEY_CONNECT} from './constants'
+import Header from './header'
+import Title from './title'
+import Footer from './footer'
+import Content from './Content'
 
 function App() {
   const [apiData, setApiData] = useState([])
@@ -23,12 +27,13 @@ console.log(apiData);
 
   return (
     <div className="App">
-      <h1> Nasa Photo of the Day</h1>
-      <h3> {apiData.title} </h3>
+      <Title title={apiData.title}/>
+      <p>
       <img src={apiData.url} alt='spacephoto'/>
-      <p> {apiData.explanation}</p>
-      <p> {apiData.date}</p>
-      <p> {apiData.copyright} </p>
+      </p>
+      <Header text={apiData.date}/>
+      <Content text={apiData.explanation}/>
+      <Footer title={apiData.copyright}/>
     </div>
   );
 }
