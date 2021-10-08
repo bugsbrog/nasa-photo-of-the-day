@@ -1,13 +1,28 @@
 import React from 'react'
+import styled from 'styled-components';
+
+const StyledTitle = styled.div`
+    h2 {
+        color: ${pr => pr.theme.primaryColor};
+        font-family: ${pr => pr.theme.firstText};
+
+        &::before {
+            content: '🪐';
+            &:hover {
+                transform: scale(1.1);
+        }
+    }
+    }
+`
 
 const Title = props => {
     const {title} = props
 
     return (
-        <div>
+        <StyledTitle>
             <h2>{title}</h2>
-        </div>
+        </StyledTitle>
     )
 }
 
-export default Title
+export default Title;
